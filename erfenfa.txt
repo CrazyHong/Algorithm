@@ -1,0 +1,35 @@
+{1,2,3,4,5,6,7} 3  => {4,5,6,7,1,2,3}
+
+
+void MoveFirstPartOfArrayToTheEnd(int[] array, int lengthOfFirstPart)
+{
+if(lengthOfFirstPart>0&&lengthOfFirstPart<array.length)
+{
+    int len=lengthOfFirstPart-1;
+    for(int i=0;i<len;i++,lengthOfFirstPart--)  //reverse the first part3,2,1,4,5,6,7
+    {
+        array[i]^=array[len];
+        array[len]^=array[i];
+        array[i]^=array[len];
+    }
+    len=array.length-1;
+    for(int j=lengthofFirstPart;i<len;i++,len--)  //reverse the lastpart
+    {                                                                                    //3,2,1,7,6,5,4
+        array[j]^=array[len1];
+        array[len]^=array[j];
+        array[j]^=array[len];
+    }
+    len=array.length-1;
+    for(int k=0;k<len;k++,len--)    //reserve the changed array//4,5,6,7,1,2,3
+    {
+        array[k]^=array[len];
+        array[len]^=array[k];
+        array[k]^=array[len]
+    }
+}
+else
+    {
+    system.console.writeLine("the lengthOfFirstPart is invalidate!!");
+    }
+
+}

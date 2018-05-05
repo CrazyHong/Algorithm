@@ -1,0 +1,18 @@
+public void Reverse() {
+            Node newNode = null;
+            Node current = head;
+            while (current != null) {
+                head = current.nextNode;
+                current.nextNode = newNode;
+                newNode = current;
+                current = head;
+            }
+            head = newNode;
+        }
+
+
+
+head->next=prev
+prev=head
+head=next
+next=head->next

@@ -1,0 +1,44 @@
+static void Main(string[] args)
+        {
+            Stack<char> st = new Stack<char>();
+            Stack<char> st_temp = new Stack<char>();
+            string input = "This is a string";
+            for (int i = 0; i < input.Length; i++)
+            {
+                st.Push(input[i]);
+            }
+            Console.WriteLine("Current string: ");
+            Console.WriteLine(input);
+            Console.WriteLine("Revert string: ");
+            int k = 0;
+            foreach (char c in st)
+            {
+                if (c == ' ')
+                {
+                    foreach (char w in st_temp)
+                    {
+                        Console.Write(w);
+                    }
+                    int count = st_temp.Count;
+                    for (int j = 0; j < count; j++)
+                    {
+                        st_temp.Pop();
+                    }
+                    Console.Write(' ');
+                }
+                else
+                {
+                    st_temp.Push(c);
+                }
+                k++;
+                if (k >= input.Length)
+                {
+                    foreach (char w in st_temp)
+                    {
+                        Console.Write(w);
+                    }
+                }
+            }
+            Console.WriteLine();
+            Console.ReadLine();
+        }
